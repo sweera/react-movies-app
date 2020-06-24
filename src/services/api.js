@@ -20,7 +20,7 @@ import axios from "axios"
 import { API_KEY, BASE_URL } from "../config/api_config"
 
 export const getMovies = async () => {
-  const sourceurl = "movie/upcoming"
+  const sourceurl = "movie/now_playing"
   const url = BASE_URL + "/" + sourceurl + "?" + "api_key=" + `${API_KEY}`
   console.log(url)
   try {

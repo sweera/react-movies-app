@@ -28,38 +28,38 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Helvetica'
   }
 }));
-// const Tabs = props => {
-//   const [activeTabIndex, setActiveTabIndex] = useState(0);
-//   const activeTab = props.children[activeTabIndex];
-//   const classes = useStyles();
-//   return (
-//   <div>
-//       <div>
-//         {props.children.map((tab, i) => (
-//           <button
-//             className={classes.tabs}
-//             onClick={() => {
-//               setActiveTabIndex(i);
-//             }}
-//             key={i}
-//           >
-//             {tab.props.title}
-//           </button>
-//         ))}
-//       </div>
-//       <div>
-//         <div
+const Tabs = props => {
+  const [activeTabIndex, setActiveTabIndex] = useState(0);
+  const activeTab = props.children[activeTabIndex];
+  const classes = useStyles();
+  return (
+  <div>
+      <div>
+        {props.children.map((tab, i) => (
+          <button
+            className={classes.tabs}
+            onClick={() => {
+              setActiveTabIndex(i);
+            }}
+            key={i}
+          >
+            {tab.props.title}
+          </button>
+        ))}
+      </div>
+      <div>
+        <div
 
-//           style={{
-//             width: 100 / props.children.length + "%",
-//             transform: `translateX(${activeTabIndex * 100}%)`
-//           }}
-//         />
-//       </div>
-//       <div>{activeTab.props.children}</div>
-//     </div>
-//   );
-// };
+          style={{
+            width: 100 / props.children.length + "%",
+            transform: `translateX(${activeTabIndex * 100}%)`
+          }}
+        />
+      </div>
+      <div>{activeTab.props.children}</div>
+    </div>
+  );
+};
 
 
 
@@ -103,16 +103,45 @@ const useStyles = makeStyles((theme) => ({
 
 //           )
 //     }
+// const TabScreen = props => {
+//   const classes = useStyles()
+//   return (
+//     <div className='container'>
+
+//       {props.movies.map(element => {
+//         const { poster_path, title, release_date, overview, popularity } = element
+//         return (
+          
+//           <DisplayCard
+//             //key={getRecipeIdFromUri(uri)}
+//             //id={getRecipeIdFromUri(uri)}
+//             imageurl={'https://image.tmdb.org/t/p/original' + poster_path}
+//             label={title}
+//             date={release_date}
+//             overview={overview}
+//             popularity={popularity}
+//           />
+
+//         )
+//       })}
+
+//     </div>
+//     // <div>{console.log(props)}</div>
+//   )
+// }
+
 const TabScreen = props => {
   const classes = useStyles()
   return (
     <div className='container'>
-
+      
       {props.movies.map(element => {
         const { poster_path, title, release_date, overview, popularity } = element
         return (
-
-          <DisplayCard
+          <div>
+            <Tabs>
+              <div title="Movies">
+              <DisplayCard
             //key={getRecipeIdFromUri(uri)}
             //id={getRecipeIdFromUri(uri)}
             imageurl={'https://image.tmdb.org/t/p/original' + poster_path}
@@ -121,6 +150,35 @@ const TabScreen = props => {
             overview={overview}
             popularity={popularity}
           />
+              </div>
+              <div title="Search Results">
+                hello
+              <DisplayCard
+            //key={getRecipeIdFromUri(uri)}
+            //id={getRecipeIdFromUri(uri)}
+            imageurl={'https://image.tmdb.org/t/p/original' + poster_path}
+            label={title}
+            date={release_date}
+            overview={overview}
+            popularity={popularity}
+          />
+              </div>
+              <div title="TV Shows">
+                bye
+              <DisplayCard
+            //key={getRecipeIdFromUri(uri)}
+            //id={getRecipeIdFromUri(uri)}
+            imageurl={'https://image.tmdb.org/t/p/original' + poster_path}
+            label={title}
+            date={release_date}
+            overview={overview}
+            popularity={popularity}
+          />
+              </div>
+            
+              </Tabs>
+          </div>
+          
 
         )
       })}
