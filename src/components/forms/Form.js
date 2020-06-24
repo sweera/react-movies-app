@@ -44,14 +44,15 @@ const Form = props => {
                 //defaultValue='multi'
                 label='Search Type'
                 name='Search Type'
+                native
                 // id="demo-simple-select"
                 // value={age}
-                onChange={e => props.onInputChange(e.target.value)}
+                onChange={e => props.onSearchOptionChange(e.target.value)}
                 variant='outlined'
             >
-                <MenuItem>Multi</MenuItem>
-                <MenuItem>Movies</MenuItem>
-                <MenuItem>Shows</MenuItem>
+                <option value={'multi'}>Multi</option>
+                <option value={'movie'}>Movie</option>
+                <option value={'tv'}>TV</option>
             </Select>
 
             <Button className={classes.button} type="submit" variant="outlined">

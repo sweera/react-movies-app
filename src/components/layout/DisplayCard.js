@@ -59,9 +59,6 @@ const DisplayCard = props => {
 
                   Release Date: {date}
                 </Typography>
-                {/* <Typography variant="body2" gutterBottom>
-                  overview={overview}
-              </Typography> */}
                 <Typography color="textSecondary">
                   Popularity: {popularity}
 
