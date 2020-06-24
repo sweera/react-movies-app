@@ -16,16 +16,16 @@ const useStyles = makeStyles((theme) => ({
     // marginLeft: theme.spacing(5)
   },
   tabs: {
-      textAlign:'center',
-      marginLeft: theme.spacing(1),
-      backgroundColor: '#e8e7e6',
-      border:'0',
-      color:'Black',
-      width: '30em',
-      padding:'1.5em',
-      cursor:'Pointer',
-      fontSize: '16px',
-      fontFamily:'Helvetica'
+    textAlign: 'center',
+    marginLeft: theme.spacing(1),
+    backgroundColor: '#e8e7e6',
+    border: '0',
+    color: 'Black',
+    width: '30em',
+    padding: '1.5em',
+    cursor: 'Pointer',
+    fontSize: '16px',
+    fontFamily: 'Helvetica'
   }
 }));
 // const Tabs = props => {
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
 //       </div>
 //       <div>
 //         <div
-          
+
 //           style={{
 //             width: 100 / props.children.length + "%",
 //             transform: `translateX(${activeTabIndex * 100}%)`
@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 // const TabScreen = props =>{
-    
+
 //         const classes = useStyles();
 //         return (
 //           <div>
@@ -73,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
 //             {props.movies.map(element => {
 //                   const { original_title, overview, title, release, vote_average } = element
 //                   return(
-                      
+
 //                         <DisplayCard 
 //                             // key={getRecipeIdFromUri(uri)}
 //                             // id={getRecipeIdFromUri(uri)}
@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
 //                             title = {title}
 
 //                         />
-                      
+
 //                   )
 //               })}
 //               <DisplayCard />
@@ -100,37 +100,37 @@ const useStyles = makeStyles((theme) => ({
 //             </div>
 //           {/* </Tabs> */}
 //         </div>
-    
+
 //           )
 //     }
 const TabScreen = props => {
   const classes = useStyles()
-  return(
+  return (
     <div className='container'>
-        
-            {props.movies.map(element => {
-                const { poster_path, title, release_date, overview, popularity } = element
-                return(
-                    
-                      <DisplayCard 
-                          //key={getRecipeIdFromUri(uri)}
-                          //id={getRecipeIdFromUri(uri)}
-                          imageurl={'https://image.tmdb.org/t/p/original' + poster_path }
-                          label={title}
-                          date={release_date}
-                          overview={overview}
-                          popularity={popularity}
-                      />
-                    
-                )
-            })}
-        
-    </div>  
-   // <div>{console.log(props)}</div>
+
+      {props.movies.map(element => {
+        const { poster_path, title, release_date, overview, popularity } = element
+        return (
+
+          <DisplayCard
+            //key={getRecipeIdFromUri(uri)}
+            //id={getRecipeIdFromUri(uri)}
+            imageurl={'https://image.tmdb.org/t/p/original' + poster_path}
+            label={title}
+            date={release_date}
+            overview={overview}
+            popularity={popularity}
+          />
+
+        )
+      })}
+
+    </div>
+    // <div>{console.log(props)}</div>
   )
 }
 
-    
+
 
 export default TabScreen
-  
+

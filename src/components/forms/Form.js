@@ -22,7 +22,7 @@ const getStyles = makeStyles(theme => ({
         marginRight: theme.spacing(1),
         width: '50em',
     },
-    select:{
+    select: {
         width: '14em',
         marginTop: theme.spacing(1),
     }

@@ -10,7 +10,7 @@ import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardHeader from '@material-ui/core/CardHeader'
 import CardMedia from '@material-ui/core/CardMedia'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 //import { Link } from 'react-router-dom'
 
@@ -40,40 +40,40 @@ const getStyles = makeStyles(theme => ({
 const DisplayCard = props => {
   const classes = getStyles()
   //const label = 'How gorgeous?!'
-  const {imageurl,label,date,overview,popularity} = props
+  const { imageurl, label, date, overview, popularity } = props
   return (
-   
+
     <div className={classes.root}>
       <Paper className={classes.paper}>
         <Grid container spacing={2}>
           <Grid item>
-            <img src={imageurl} width="200px"/>
-          
-            
+            <img src={imageurl} width="200px" />
+
+
           </Grid>
           <Grid item xs={6} sm container>
             <Grid item xs container direction="column" spacing={3}>
               <Grid item xs>
-              <b>{label}</b>
+                <b>{label}</b>
                 <Typography gutterBottom variant="subtitle1">
-                
-                Release Date: {date}
-              </Typography>
+
+                  Release Date: {date}
+                </Typography>
                 {/* <Typography variant="body2" gutterBottom>
                   overview={overview}
               </Typography> */}
-                <Typography  color="textSecondary">
-                 Popularity: {popularity}
-                  
-              </Typography>
-              <Typography>
-              {overview}
-              </Typography>
-               
+                <Typography color="textSecondary">
+                  Popularity: {popularity}
+
+                </Typography>
+                <Typography>
+                  {overview}
+                </Typography>
+
               </Grid>
-              
+
             </Grid>
-           
+
           </Grid>
         </Grid>
       </Paper>

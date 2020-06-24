@@ -6,39 +6,39 @@ import TabScreen from '../screens/TabScreen'
 
 class MoviesContainer extends Component {
     state = {
-        searchQuery:'',
-        movies:[],
-        isLoading:false
+        searchQuery: '',
+        movies: [],
+        isLoading: false
     }
-    componentDidMount(){
-        this.fetchMovies() 
-     }
-    
+    componentDidMount() {
+        this.fetchMovies()
+    }
+
     fetchMovies = () => {
-        
+
         // const { movieName } = e.target.value
         // e.preventDefault()
-        
+
         const sourceurl = "movie/upcoming"
         this.setState({
-            isLoading:true
+            isLoading: true
         })
         getMovies(sourceurl).then(
             (movies) => {
-                console.log('movies',movies)
+                console.log('movies', movies)
                 this.setState({
                     movies,
-                    isLoading:false,
-                    
+                    isLoading: false,
+
                 })
             },
             error => {
-                alert('Error',`Something went wrong! ${error}`)
+                alert('Error', `Something went wrong! ${error}`)
             }
         )
         console.log(sourceurl)
     }
-   
+
     handleInputChange = searchQuery => {
         console.log('searchQuery', searchQuery)
         this.setState({
@@ -46,16 +46,16 @@ class MoviesContainer extends Component {
         })
     }
     render() {
-        const {isLoading, movies} = this.state
+        const { isLoading, movies } = this.state
         return (
             <div>
                 <Form onInputChange={this.handleInputChange}
                     onSubmit={this.fetchMovies}
-                /> 
-                <TabScreen 
-                    movies = {movies}
                 />
-                  
+                <TabScreen
+                    movies={movies}
+                />
+
             </div>
         )
     }
